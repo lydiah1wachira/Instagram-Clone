@@ -13,3 +13,18 @@ class Profile(models.Model):
   profile_photo = models.ImageField( upload_to = 'profile/', blank=True)
   bio = HTMLField(blank=True,default='I am a new user!')
   name = models.CharField(blank=True, max_length=60)
+
+  def save_profile(self):
+        self.save() 
+
+  def delete_profile(self):
+      self.delete()
+
+  def update_bio(self,new_bio):
+      self.bio = new_bio
+      self.save()
+
+  def update_image(self, user_id, new_image):
+      user = User.objects.get(id = user_id)
+      self.photo = new_image 
+      self.save()              
