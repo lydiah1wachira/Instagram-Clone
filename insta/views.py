@@ -15,3 +15,18 @@ def landing(request):
   suggested_accounts = Profile.objects.all()
 
   return render(request, 'instapages/landing-page.html', {'posts':posts, 'users':users, 'current_user':current_user, 'suggested_accounts':suggested_accounts})
+
+
+def search_profile(request):
+    if 'search_user' in request.GET and request.GET['search_user']:
+        name = request.GET.get("search_user")
+        results = Profile.search_profile(name)
+        message = f'name'
+        params = {
+            'results': results,
+            'message': message
+        }
+        return render(request, 'results.html', params)
+    else:
+        message = "You haven't searched for any profile"
+    return render(request, 'search-results.html', {'message': message})
