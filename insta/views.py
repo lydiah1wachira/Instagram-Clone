@@ -4,7 +4,7 @@ from .models import Post,Profile
 from django.contrib.auth.models import User
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+
 def landing(request):
   '''
   view function to display the landing page and all of its data
@@ -14,4 +14,4 @@ def landing(request):
   current_user = request.user
   suggested_accounts = Profile.objects.all()
 
-  return render(request, 'insta/landing-page.html', {'posts':posts, 'users':users, 'current_user':current_user, 'suggested_accounts':suggested_accounts})
+  return render(request, 'instagram/landing-page.html', {'posts':posts, 'users':users, 'current_user':current_user, 'suggested_accounts':suggested_accounts})
