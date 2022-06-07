@@ -26,7 +26,7 @@ def search_profile(request):
             'results': results,
             'message': message
         }
-        return render(request, 'results.html', params)
+        return render(request, 'search.html', params)
     else:
         message = "You haven't searched for any profile"
-    return render(request, 'search-results.html', {'message': message})
+    return render(request, 'search.html', {'message': message})
