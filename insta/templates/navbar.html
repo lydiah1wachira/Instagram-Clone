@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+<!--  -->
+<div class="navbar" role="navigation">
+  <div class="container-fluid">
+      <div class="navbar-header">
+          <div class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
+              style="border-color: transparent;">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </div>
+          <img src="../../static/images/instalogo.png" class="logo" alt="">
+          
+          
+              
+          </div>
+          <div class="navbar-collapse collapse" style="float: right;">
+            {% if user.is_authenticated %}
+              <ul class="nav navbar-nav">
+                  <li><a href="{%url 'landing'%}" style="cursor: pointer;"><i style="margin-right: 20px;cursor: pointer;font-size: 25px;color: black;" class="fa fa-home"></i></a></li>
+                  <li>
+                    <a href="/new/post/"><i style="margin-right: 20px;font-size: 20px;color: black" class="fa fa-camera"></i></a>
+                  </li>
+                  
+                  <li> <a href="{%url 'landing' %}"><i style="margin-right: 20px;font-size: 20px;color: black" class="fa fa-heart"></i></a></li>
+                  <li>
+                    <a href="{% url 'profile' profile_id=user.id %}"><i style="margin-right: 20px;font-size: 20px;color: black" class="fa fa-user"></i></a>
+                  </li>
+                  
+                  <li><a href="/logout"><i style="margin-right: 20px;font-size: 20px;color: black" class="fa fa-sign-out"></i></a>
+                  </li>
+              </ul>
+          </div>
+          {% endif %}
+         
+      </div>
+  </div>
+</div>
+</body>
+</html>
