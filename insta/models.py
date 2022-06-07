@@ -83,6 +83,9 @@ class Post(models.Model):
     
       
 class Comment(models.Model):
+    '''
+    Comment model class to help create new instances of a comment object
+    '''
     comment = models.TextField()
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='comments')
