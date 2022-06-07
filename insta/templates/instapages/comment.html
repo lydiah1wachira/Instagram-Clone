@@ -1,0 +1,61 @@
+{% extends 'instagram-page/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% block content %}
+
+
+<div class="container">
+    
+
+    <div class="row">
+        <!-- Empty div -->
+        <div class="col-md-3 phones" >
+           
+        </div>
+        <div class="col-md-6 panel-form" >
+          
+          <div class="panel panel-default">
+    
+            <div class="panel-heading">
+              <h4 class="text-center">
+                 Comment Section
+              </h4>
+            </div>
+            <div class="panel-body">
+    
+                {% for comment in image.comments.all %}
+                <div class="comment">
+                    <div><strong>{{ comment.user.user.username }}</strong> <span class="text-secondary">{{ comment.content }}</span>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="ml-3">No comments here yet</p>
+                {% endfor %}
+                
+                  
+                <form  action="" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+                  
+                    {% bootstrap_form form%}
+    
+                    <div class="form-group" style=" width: 100%;">
+                        <input type="submit" class="btn btn-primary " value="Post"  style="align-items: center; width: 100%;" >
+    
+                    </div>
+    
+                <input type="hidden" name="next" value="{{next}}">
+                  </form>
+    
+    
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+        <!-- empty div -->
+        <div class="col-md-2"></div>
+      </div>
+</div>
+{%endblock%}  
