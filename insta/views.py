@@ -14,4 +14,4 @@ def landing(request):
   current_user = request.user
   suggested_accounts = Profile.objects.all()
 
-  return render(request, 'instagram/landing-page.html', {'posts':posts, 'users':users, 'current_user':current_user, 'suggested_accounts':suggested_accounts})
+  return render(request, 'instapages/landing-page.html', {'posts':posts, 'users':users, 'current_user':current_user, 'suggested_accounts':suggested_accounts})
