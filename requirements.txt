@@ -1,0 +1,13 @@
+asgiref==3.5.2
+backports.zoneinfo==0.2.1
+beautifulsoup4==4.11.1
+confusable-homoglyphs==3.2.0
+Django==4.0.5
+django-bootstrap-v5==1.0.11
+django-registration-redux==2.10
+django-tinymce==3.4.0
+Pillow==9.1.1
+psycopg2==2.9.3
+pytz==2022.1
+soupsieve==2.3.2.post1
+sqlparse==0.4.2

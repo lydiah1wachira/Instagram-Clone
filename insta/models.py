@@ -52,6 +52,9 @@ class Profile(models.Model):
 
 
 class Post(models.Model):
+    '''
+    Post model class to help create new instances of a post object
+    '''
     image = models.ImageField(upload_to ='posts/')
     image_name = models.CharField(max_length=40)
     image_caption = HTMLField() 
