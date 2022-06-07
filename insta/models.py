@@ -86,7 +86,7 @@ class Comment(models.Model):
     '''
     Comment model class to help create new instances of a comment object
     '''
-    content = HTMLField()
+    content = HTMLField(null=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='comments')
     date_posted = models.DateTimeField(auto_now_add=True, null=True)
