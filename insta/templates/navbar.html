@@ -19,7 +19,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </div>
-          <img src="{% static 'images/instalogo.png' %}" class="logo" alt="">
+          <img src="../static/insta/images/instalogo.png" class="logo" alt="instagram">
           
           
               
@@ -42,6 +42,19 @@
               </ul>
           </div>
           {% endif %}
+          <div class="navbar-collapse collapse " style="float: right;" >
+            <form class="navbar-form" role="search" action="{% url 'search' %}">
+
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search by profile name..." name="search_user">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+          
+            </form>
+          </div>
+      </div>
          
       </div>
   </div>
