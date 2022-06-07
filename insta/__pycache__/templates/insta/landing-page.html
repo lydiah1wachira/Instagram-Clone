@@ -1,36 +1,63 @@
+{%extends "insta/base.html"%}
 {% load bootstrap5 %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- {% if title %}
-  <title>Instagram-Clone {{title}}</title>
-  {% else %}
-    <title> Instagram-Clone </title>
- {% endif %}
+{%block content%}
+<div class="container">
+    <div class="row">
+        <!-- Empty div -->
+       
+        <div class="col-md-7 panel-form" >
+            {% for post in posts %}
+          <div class="panel panel-default" >
+    
+            <div class="panel-heading" style="margin: 0%; padding-bottom: 0;">
+              <div class="profile-pic">
+                
 
- {% block styles %}
-    {% bootstrap_css %}
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
- {% endblock %}
-</head>
-<body>
- {% include "navbar.html" %}  
- {% block content %} 
- 
- {%endblock%}
+              </div>
+              <h4> {{ post.user.user.username| capfirst }}</h4>
+            </div>
+            <div class="panel-body" style="width: 100%;">
+                <img src="{{post.image.url}}" alt=""  style=" width: 100%;">
+               <p>
+                {{ post.image_caption| safe }}
+               </p> 
+                <p class="muted"> {{ post.date_posted|timesince }} ago</p>
+               
+    
+               {% for comment in post.comments.all|slice:'2' %}
+               <div class="comment">
+                   <div class="ml-4"><strong>{{ comment.user.user.username }}</strong> <span
+                           class="text-secondary">{{ comment.content }}</span>
+                   </div>
+               </div>
+               
+               {% empty %}
+               {% endfor %}
+               <a href="{% url 'comment' post.id %}">Add a Comment</a>
+            </div>
+    
+          </div>
+          {% endfor %}
+        </div>
+        <!-- empty div -->
+        <div class="col-md-4">
+            <h5 class="text-center">Suggestions for you</h5>
+            {% for user in users%}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}"
+                     width="45px" height="45px">
+            
+           
+                <span><a href="">{{user.username}}</a></span>
+                </div>
 
- {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {% bootstrap_javascript %}
-  {% endblock %}
-</body>
-</html>
+            </div>
+            
+                
+           
+            {%endfor%}
+        </div>
+      </div>
+  </div>
+{%endblock%}
