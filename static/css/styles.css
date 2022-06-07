@@ -1,0 +1,9 @@
+.logo{
+  width: 17.5rem;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(247, 247, 247);
+ }
