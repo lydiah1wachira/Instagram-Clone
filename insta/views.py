@@ -36,8 +36,6 @@ def search_profile(request):
 def post_comment(request, id):
     image = get_object_or_404(Post, pk=id)
     is_liked = False
-    # if image.likes.filter(id=request.user.id).exists():
-    #     is_liked = True
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -52,6 +50,6 @@ def post_comment(request, id):
         'image': image,
         'form': form,
         'is_liked': is_liked,
-        # 'total_likes': image.total_likes()
+        
     }
-    return render(request, 'post.html', params) 
+    return render(request, 'comment.html', params) 
