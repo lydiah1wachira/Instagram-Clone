@@ -62,6 +62,7 @@ class Post(models.Model):
     image_likes = models.PositiveIntegerField(default=0,blank=True)
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='posts')
+    
 
     @classmethod
     def get_images(cls):
@@ -101,3 +102,4 @@ class Comment(models.Model):
     def get_comments(cls,id):
         comments = cls.objects.filter(image_id=id)
         return comments   
+

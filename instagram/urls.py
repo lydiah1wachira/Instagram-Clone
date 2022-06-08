@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-from insta import views
+
+from django.contrib.auth import views 
 
 
 
@@ -25,9 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('insta/', include('insta.urls')),
     path('accounts/', include('registration.backends.simple.urls')),
-    path(r'^logout/$',views.LogoutView.as_view(), {'next_page': 'settings.LOGOUT_REDIRECT_URL'}),
-    path(r'^accounts/', include('django.contrib.auth.urls')),
-    path(r'^tinymce/', include('tinymce.urls'))
+    path('logout/',views.LogoutView.as_view(), {'next_page': 'settings.LOGOUT_REDIRECT_URL'}),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('tinymce/', include('tinymce.urls'))
 ]
 
 if settings.DEBUG:

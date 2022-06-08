@@ -8,7 +8,7 @@
 </head>
 <body>
 <!--  -->
-<div class="navbar" role="navigation">
+<div class="navbar" role="navigation" style="margin-bottom:2%;">
   <div class="container-fluid">
       <div class="navbar-header">
           <div class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"
@@ -18,11 +18,23 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </div>
-          <img src="../static/insta/images/instalogo.png" class="logo" alt="instagram">
-          
-          
-              
+          <img src="../static/insta/images/instalogo.png" class="logo" alt="instagram" style="width:10rem;">
+                
           </div>
+
+          <div class="navbar-collapse collapse " style="float: right;" >
+            <form class="navbar-form" role="search" action="{% url 'search' %}">
+
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search by profile name..." name="search_user">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+          
+            </form>
+          </div>
+          
           <div class="navbar-collapse collapse" style="float: right;">
             {% if user.is_authenticated %}
               <ul class="nav navbar-nav">
@@ -41,18 +53,7 @@
               </ul>
           </div>
           {% endif %}
-          <div class="navbar-collapse collapse " style="float: right;" >
-            <form class="navbar-form" role="search" action="{% url 'search' %}">
-
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search by profile name..." name="search_user">
-                <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-                </div>
-              </div>
           
-            </form>
-          </div>
       </div>
          
       </div>

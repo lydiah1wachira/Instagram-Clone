@@ -1,7 +1,9 @@
 from django.urls import path, re_path
-from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+
+
+from . import views
 
 urlpatterns = [
   path('', views.landing, name='landing' ),
@@ -10,7 +12,7 @@ urlpatterns = [
   path('new/post/', views.new_post, name='new-post'),
   path('new/profile/', views.new_profile, name='new-profile'),
   re_path(r'profile/(?P<profile_id>\d+)', views.profile, name='profile'),
-  re_path(r'user_profile/(?P<username>\w+)', views.user_profile, name='user_profile'),
+  re_path(r'user_profile/(?P<username>\w+)', views.user_profile, name='user_profile'), 
 
 ]
 
