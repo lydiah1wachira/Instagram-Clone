@@ -47,7 +47,9 @@
             {% for user in users%}
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}"
+                  {% if person.profile_photo %}
+                    <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}">
+                  {% endif %}
                      width="45px" height="45px">
             
            
