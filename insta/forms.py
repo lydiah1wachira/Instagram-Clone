@@ -15,5 +15,31 @@ class CommentForm(forms.ModelForm):
       model = Comment
       fields = ('content',)
 
+class NewProfileForm(forms.ModelForm):
+  '''New Profile form class to help create profile objects'''
+  class Meta:
+        model = Profile
+        exclude = ['user']
+
+
+class UpdateUserProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = [ 'name','profile_photo', 'bio']
+
+
+class UpdateUserForm(forms.ModelForm):
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+
+    class Meta:
+        model = User
+        fields = ('username', 'email')
+
+
+class NewPostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        exclude = ['posted_by','date_posted', 'image_likes','user']
+
 
 

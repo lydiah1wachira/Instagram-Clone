@@ -1,0 +1,51 @@
+{%extends "instapages/base.html"%}
+{% load bootstrap5 %}
+{% load static %}
+{%block content%}
+<div class="container">
+    
+
+<div class="row">
+    <!-- Empty div -->
+    <div class="col-md-3 phones" >
+       
+    </div>
+    <div class="col-md-6 panel-form" >
+      
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h4 class="text-center">
+              Create a profile to use instagram 
+          </h4>
+        </div>
+        <div class="panel-body">
+              
+            <form  action="{%url 'new-post'%}" method="post" enctype="multipart/form-data">
+                {%csrf_token%}
+              
+                {% bootstrap_form form%}
+
+                <div class="form-group" style=" width: 100%;">
+                    <input type="submit" class="btn btn-primary " value="Create"  style="align-items: center; width: 100%;" >
+
+                </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+              </form>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- empty div -->
+    <div class="col-md-2"></div>
+  </div>
+</div>  
+
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %}
+{% endblock %}
+{%endblock%}
