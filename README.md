@@ -1,7 +1,7 @@
 # Instagram-Clone
 An instagram clone app that allows you to add photos and view photos added by other users and their profiles
-![alt text](./insta/static/insta/images/Screenshot%20from%202022-06-08%2020-29-36.png)
 ![alt text](./insta/static/insta/images/Screenshot%20from%202022-06-08%2020-32-10.png)
+![alt text](./insta/static/insta/images/Screenshot%20from%202022-06-08%2020-29-36.png)
 
 ## By
 Lydiah Wachira
