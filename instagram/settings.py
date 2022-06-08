@@ -174,3 +174,5 @@ AUTH_PROFILE_MODULE = 'accounts.Profile'
 LOGOUT_REDIRECT_URL='/'
 
 LOGIN_REDIRECT_URL='/'
+
+ROOT_URLCONF = 'instagram.urls'
