@@ -19,7 +19,7 @@
               <h4> {{ post.user.user.username| capfirst }}</h4>
             </div>
             <div class="panel-body" style="width: 100%;">
-                <img src="{{post.image.url}}" alt=""  style=" width: 100%;">
+                <img src="{{post.image.url}}" alt=""  style=" width: 70%; height:720px;">
                <p>
                 {{ post.image_caption| safe }}
                </p> 
@@ -50,7 +50,7 @@
                   {% if person.profile_photo %}
                     <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}">
                   {% endif %}
-                     width="45px" height="45px">
+                    
             
            
                 <span><a href="">{{user.username}}</a></span>
