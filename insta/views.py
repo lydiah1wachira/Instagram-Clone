@@ -45,10 +45,10 @@ def search_profile(request):
             'results': results,
             'message': message
         }
-        return render(request, 'search.html', params)
+        return render(request, 'instapages/search.html', params)
     else:
         message = "You haven't searched for any profile"
-    return render(request, 'search.html', {'message': message})
+    return render(request, 'instapages/search.html', {'message': message})
 
 @login_required
 def profile(request,profile_id):
@@ -102,7 +102,7 @@ def new_post(request):
 
     else:
         form = NewPostForm()
-    return render(request,'new_post.html', {"form": form})  
+    return render(request,'instapages/new_post.html', {"form": form})  
 
 
 @login_required

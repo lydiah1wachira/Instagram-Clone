@@ -19,15 +19,12 @@
             
                 <div class="row">
                     <div class="col-md-3">
+                        {% if person.profile_photo %}
                         <img src="{{user_profile.user.profile.profile_photo.url}}" alt=""
                              class="rounded-circle border ml-3 mt-2  mr-3" width="55" height="55">
-                    
+                        {%endif%}
                         <span><strong><a href="">{{user_profile.user.username}}</a></strong></span><br>
-                        
-                    
-       
-                       
-                    
+    
 
                 </div>
             
@@ -37,6 +34,7 @@
             {% endif %}
         </div>
         <div class="col-md-3"></div>
+        
     </div>
 
 </div>
