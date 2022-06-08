@@ -23,7 +23,7 @@ MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', False)
 
-SECRET_KEY='342s(s(!hsjd998sde8$=o4$3m!(o+fge2^97kp6#ujhi'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
-  
+    'crispy_forms',
     'tinymce',
     
 ]
@@ -169,3 +169,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+AUTH_PROFILE_MODULE = 'accounts.Profile'
+
+LOGOUT_REDIRECT_URL='/'
+
+LOGIN_REDIRECT_URL='/'
