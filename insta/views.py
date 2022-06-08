@@ -4,6 +4,8 @@ from .models import Post,Profile,Comment
 from django.contrib.auth.models import User
 from django.http  import HttpResponse,Http404, HttpResponseRedirect
 from .forms import CommentForm,NewProfileForm,NewPostForm,UpdateUserProfileForm,UpdateUserForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
