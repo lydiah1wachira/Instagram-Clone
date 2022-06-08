@@ -23,6 +23,7 @@ MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', False)
 
+SECRET_KEY='342s(s(!hsjd998sde8$=o4$3m!(o+fge2^97kp6#ujhi'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
